@@ -128,3 +128,45 @@ footer {
     font-size: 12px;
     border-top: 1px solid #dcdcdc;
 }
+@media screen and (max-width: 767px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .logo-area {
+        text-align: center;
+        width: 100%;
+    }
+
+    .logo-area h1 {
+        font-size: 16px;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px;
+        width: 100%;
+    }
+
+    nav ul li a {
+        font-size: 11.5px;
+        padding: 5px 8px;
+        background: rgba(0, 64, 128, 0.08);
+        border-radius: 4px;
+        display: inline-block;
+    }
+
+    main {
+        padding: 20px 15px;
+        margin: 15px;
+    }
+}
