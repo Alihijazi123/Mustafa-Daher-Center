@@ -1,0 +1,130 @@
+/* css/style.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    /* Direct Online Water Background Image with a clean blue gradient overlay */
+    background: linear-gradient(rgba(0, 50, 100, 0.65), rgba(0, 50, 100, 0.65)), 
+                url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 2px solid #dcdcdc;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-area h1 {
+    font-size: 18px;
+    color: #004080;
+    text-transform: uppercase;
+}
+
+.logo-area p {
+    font-size: 11px;
+    color: #555;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: #004080;
+    text-decoration: underline;
+}
+
+main {
+    padding: 30px 40px;
+    max-width: 900px;
+    margin: 30px auto;
+    background: rgba(255, 255, 255, 0.94);
+    min-height: 75vh;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    border-radius: 8px;
+}
+
+.section-title {
+    font-size: 18px;
+    color: #004080;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #004080;
+    padding-bottom: 3px;
+}
+
+p, ul, ol {
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+ul, ol {
+    padding-left: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 6px;
+    margin-top: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-buttons {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.form-buttons button {
+    padding: 8px 15px;
+    background: #004080;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-buttons button[type="reset"] {
+    background: #6c757d;
+}
+
+footer {
+    background: rgba(34, 34, 34, 0.9);
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    font-size: 12px;
+    border-top: 1px solid #dcdcdc;
+}
