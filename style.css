@@ -29,6 +29,9 @@ header {
     box-sizing: border-box;
 }
 
+
+
+
 /* Big Logo Area */
 .logo-area {
     text-align: center;
@@ -41,6 +44,66 @@ header {
     width: auto;
     max-width: 100%;
     display: inline-block;
+}
+
+
+
+
+
+/* حاوية شريط الفيلم القديم */
+.film-strip-container {
+    background-color: #111111;
+    padding: 10px 0;
+    overflow: hidden;
+    position: relative;
+    border-top: 2px solid #333;
+    border-bottom: 2px solid #333;
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.8);
+}
+
+/* مسار الحركة المستمرة */
+.film-strip-track {
+    display: flex;
+    gap: 15px;
+    width: max-content;
+    animation: scrollFilm 25s linear infinite;
+}
+
+/* إطار الفيلم الفردي (شكل مستطيل سينمائي مع ثقوب الفيلم) */
+.film-frame {
+    width: 110px;
+    height: 75px;
+    background-color: #000;
+    border: 2px solid #444;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+    /* تأثير لون سينمائي خفيف (تغميق مع لمسة ريترو) */
+    filter: sepia(20%) contrast(110%);
+    flex-shrink: 0;
+}
+
+.film-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* حركة السحب المستمرة لشريط الفيلم */
+@keyframes scrollFilm {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-50% - 7.5px));
+    }
+}
+
+/* إيقاف الحركة عند تمرير الماوس للمسار (اختياري لراحة العين) */
+.film-strip-container:hover .film-strip-track {
+    animation-play-state: paused;
 }
 
 /* Circular Image Showcase Gallery */
@@ -77,6 +140,7 @@ header {
     object-fit: cover;
     display: block;
 }
+
 
 /* Navigation Bar with Bordered Buttons */
 nav {

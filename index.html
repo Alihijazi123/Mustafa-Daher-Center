@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+    
     <header>
         <div class="logo-area">
             <!-- Logo image replacing the text title -->
@@ -18,13 +19,23 @@
             </a>
         </div>
         <!-- Circular Image Showcase Gallery -->
-        <div class="header-circles-container">
-            <div class="circle-item"><img src="image1.jpg" alt="Water Technology 1"></div>
-            <div class="circle-item"><img src="image2.jpg" alt="Water Technology 2"></div>
-            <div class="circle-item"><img src="image3.jpg" alt="Water Technology 3"></div>
-            <div class="circle-item"><img src="image4.jpg" alt="Water Technology 4"></div>
-            <div class="circle-item"><img src="image5.jpg" alt="Water Technology 5"></div>
-        </div>
+       <!-- Retro Film Strip Container -->
+<div class="film-strip-container">
+    <div class="film-strip-track">
+        <!-- الصور مكررة مرتين لضمان استمرارية الحركة (Infinite Loop) -->
+        <div class="film-frame"><img src="image1.jpg" alt="Water Tech 1"></div>
+        <div class="film-frame"><img src="image2.jpg" alt="Water Tech 2"></div>
+        <div class="film-frame"><img src="image3.jpg" alt="Water Tech 3"></div>
+        <div class="film-frame"><img src="image4.jpg" alt="Water Tech 4"></div>
+        <div class="film-frame"><img src="image5.jpg" alt="Water Tech 5"></div>
+        <!-- تكرار لنفس الصور عشان الحركة تضضل ناعمة ومابتنقطع -->
+        <div class="film-frame"><img src="image1.jpg" alt="Water Tech 1"></div>
+        <div class="film-frame"><img src="image2.jpg" alt="Water Tech 2"></div>
+        <div class="film-frame"><img src="image3.jpg" alt="Water Tech 3"></div>
+        <div class="film-frame"><img src="image4.jpg" alt="Water Tech 4"></div>
+        <div class="film-frame"><img src="image5.jpg" alt="Water Tech 5"></div>
+    </div>
+</div>
         <nav>
             <ul>
                 <li><a href="index.html" class="active">About Us</a></li>
@@ -67,9 +78,11 @@
             <p>Our suppliers are selected through a criteria composed of Top Quality Products / Services, Spare Parts Availability, reliable After Services and Warranties.</p>
         </section>
     </main>
+    
 
     <footer class="footer-class">
         <p>Tel: +961 7 220 181 | Mobile: +961 3 581 180, +961 70 581 180 | info@dahercenter.com | www.dahercenter.com.lb</p>
     </footer>
+    <script src="./script.js"></script>
 </body>
 </html>
