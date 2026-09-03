@@ -100,21 +100,21 @@ nav ul {
 
 nav a {
     text-decoration: none;
-    color: #003366;
+    color: #ffffff;
     font-weight: 500;
     font-size: 15px;
     padding: 10px 18px;
     border: 2px solid #0044aa;
     border-radius: 100px;
-    background-color: #f4f8fc;
+    background-color:#003d82;
     transition: all 0.3s ease;
     white-space: nowrap;
     box-shadow: 0 2px 4px rgba(0,0,0,0.04);
 }
 
 nav a:hover, nav a.active {
-    background-color: #0044aa;
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #003d82;
 }
 
 /* Main Content Area Container */
@@ -500,9 +500,17 @@ footer p {
 
 /* Responsive adjustments */
 /* --- تحسينات عامة للموبايل --- */
-@media screen and (max-width: 768px) {
     
 @media screen and (max-width: 768px) {
+
+
+    .logo-area{
+        width: 100% !important;
+        background: transparent !important;
+        height: 100% !important;
+        padding-top: 20px !important;
+
+    }
     /* تدمير أي تداخل عرضي وإجبار الأقسام لتكون تحت بعضها قطعيّاً */
     .content-section, 
     .content-section * {
@@ -529,10 +537,7 @@ footer p {
         clear: both !important;
         margin-top: 5px !important;
     }
-}
-
-@media screen and (max-width: 768px) {
-    /* ضبط العرض العام لكل الصفحات على الموبايل لتتوسط الشاشة بمرونة */
+    /* ضبط العرض العام وحل مشكلة خروج المحتوى عن الإطار */
     body {
         overflow-x: hidden !important;
     }
@@ -542,13 +547,26 @@ footer p {
         width: 100% !important;
         max-width: 100% !important;
         display: block !important;
-        float: none !important;
         box-sizing: border-box !important;
         padding: 15px !important;
-        margin: 0 !important;
+        margin: 0 auto !important;
+        overflow: hidden !important;
     }
 
-    /* ضمان أن العناوين، الفقرات والقوائم تترتب تحت بعضها عمودياً قطعيّاً */
+    /* حصر جميع النصوص والعناوين داخل الحدود تماماً */
+    .content-section *,
+    .content-section h2, 
+    .content-section .section-title,
+    .content-section p,
+    .content-section ul,
+    .content-section ol,
+    .content-section li {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+    }
+
     .content-section h2, 
     .content-section .section-title,
     .content-section p,
@@ -556,14 +574,12 @@ footer p {
     .content-section ol {
         display: block !important;
         width: 100% !important;
-        max-width: 100% !important;
         float: none !important;
         clear: both !important;
         margin-left: 0 !important;
         margin-right: 0 !important;
     }
 
-    /* إعطاء مسافات مريحة وواضحة بين الفقرات والعناوين */
     .content-section h2, 
     .content-section .section-title {
         font-size: 20px !important;
@@ -577,48 +593,274 @@ footer p {
         line-height: 1.6 !important;
         margin-bottom: 10px !important;
     }
-}
-/* تنسيق الأزرار لتغطي النص بالكامل وبشكل مرتب */
-.service-links a,
-.bttns-service a,
-.products-list li,
-.service-links li {
-    display: inline-block !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-    white-space: normal !important;
-    word-wrap: break-word !important;
-    padding: 14px 18px !important;
-    margin-bottom: 10px !important;
-    border: 2px solid white !important;
-    border-radius: 10px !important;
-    background-color: transparent !important;
-    color: #002244 !important;
-    text-decoration: none !important;
-    font-size: 14px !important;
-    font-weight: 500 !important;
-    line-height: 1.5 !important;
-    transition: all 0.3s ease !important; /* ضروري جداً لتعمل الحركة بنعومة */
+
+    .content-section ol, 
+    .content-section ul {
+        padding-left: 20px !important;
+        padding-right: 0 !important;
+    }
+
+    /* 
+      إجبار الحاويات كلها (سواء كانت ul أو div أو كلاسات الخدمات) 
+      لتصير أفقية 100% مع تفعيل السكرول الأفقي بشكل قطعي 
+    */
+    .service-links a,
+    .bttns-service a,
+    .products-list li,
+    .project-btns {
+        display: flex!important;
+         flex-direction: column !important;
+        width:100% !important;
+    }
+
+
+
+    /* إجبار الأزرار أو العناصر داخل القائمة لتصطف بجانب بعضها ودون أن تنزل لتحت */
+    .service-links 
+    .bttns-service a,
+    .products-list li,
+    .bttns-service  {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex: 0 0 auto !important;
+        width: auto !important;
+        min-width: 160px !important;
+        max-width: 220px !important;
+        box-sizing: border-box !important;
+        white-space: normal !important;
+        word-wrap: break-word !important;
+        padding: 12px 16px !important;
+        margin-bottom: 0 !important;
+        margin-right: 0 !important;
+        border: 2px solid white !important;
+        border-radius: 10px !important;
+        background-color: transparent !important;
+        color: #002244 !important;
+        text-decoration: none !important;
+        font-size: 13px !important;
+        font-weight: 800 !important;
+        line-height: 1.4 !important;
+        text-align: center !important;
+        transition: all 0.3s ease !important;
+    }
+
+    .service-links li:hover,
+    .service-links a:hover,
+    .bttns-service a:hover {
+        background-color: #ffffff !important;
+        border-color: #003366 !important;
+        color: #003366 !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 12px rgba(0, 51, 102, 0.1) !important;
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+    /* تعديل الدوائر العلوية */
+    .circles-container, 
+    .header-circles-wrapper {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        position: relative !important;
+        background: transparent !important;
+        overflow: hidden !important;
+        padding: 10px 0 !important;
+    }
+
+    .circles-container .circle,
+    .header-circles-wrapper .circle {
+        width: 70px !important;
+        height: 70px !important;
+        border-radius: 50% !important;
+        border: 2px solid #003366 !important;
+        background-color: transparent !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin-left: -12px !important;
+        position: relative !important;
+        transition: transform 0.3s ease !important;
+    }
+
+    .circles-container .circle:first-child,
+    .header-circles-wrapper .circle:first-child {
+        margin-left: 0 !important;
+    }
+
+    .header-logo, 
+    .center-logo {
+        position: absolute !important;
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        z-index: 10 !important;
+        background: transparent !important;
+    }
 }
 
-/* تأثير الـ Hover المضمون */
-.service-links li:hover {
-    background-color: #ffffff !important;
-    border-color: #003366 !important;
-    color: #003366 !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 4px 12px rgba(0, 51, 102, 0.1) !important;
-}
 
-/* الحاوية الخاصة بالبنود لتتوزع صح */
-.service-links,
-.bttns-service,
-.products-list,
-.project-btns {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 0 !important; /* الاعتماد على الـ margin للأزرار لضمان عدم التداخل */
-    padding: 0 !important;
-    list-style: none !important;
-}
+/* ضبط الحاوية العامة للإطار الأبيض */
+   .content-section {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 20px !important;
+        margin: 0 auto !important;
+        overflow: hidden !important;
+    }
+
+    /* تنسيق عنوان القسم */
+    .content-section .section-title {
+        font-size: 20px !important;
+        font-weight: 700 !important;
+        color: #002244 !important;
+        margin-top: 0 !important;
+        margin-bottom: 15px !important;
+        text-align: left !important;
+        padding-left: 30px !important;
+    }
+
+    /* الحاوية التي تحمل عناصر القائمة (المنتجات) */
+    .content-section .products-list {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+        padding: 0 50px !important; /* مسافة من اليمين واليسار لكي لا تلصق بالبوردر الأبيض */
+        margin: 0 !important;
+        list-style: none !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* تصميم العناصر والأزرار بحيث تكون تحت بعضها حصراً وبدون لصق بالإطار */
+    .content-section .products-list li {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        min-height: 50px !important;
+        padding: 12px 130px !important;
+        box-sizing: border-box !important;
+        
+        /* الحدود مخفية بالوضع العادي وتظهر عند الـ Hover */
+        border: 2px solid transparent !important;
+        border-radius: 50px !important;
+        background-color: transparent !important;
+        
+        /* تنسيق الخط والنص: بالعرض على سطر واحد */
+        color: #002244 !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        text-align: center !important;
+        white-space: nowrap !important;
+        transition: all 0.3s ease !important;
+        width: 100% !important;
+    }
+
+    /* تأثير الـ Hover: يظهر البوردر ويتغير اللون مع الحركة */
+    .content-section .products-list li:hover {
+        border-color: #003366 !important;
+        background-color: #ffffff !important;
+        color: #003366 !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 12px rgba(0, 51, 102, 0.1) !important;
+    }
+
+
+
+
+    .content-section .project-btns {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        padding: 0 15px !important; /* مسافة آمنة من اليمين واليسار لكي لا تلصق بالبوردر الأبيض */
+        margin: 0 !important;
+        list-style: none !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* تنسيق أزرار المشاريع لتأخذ عرضاً كاملاً ومريحاً دون تكسير الكلمات */
+    .content-section .project-btns li {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        min-height: 52px !important;
+        padding: 14px 20px !important;
+        box-sizing: border-box !important;
+        
+        /* الحدود مخفية بالوضع العادي وتظهر عند الـ Hover */
+        border: 2px solid transparent !important;
+        border-radius: 10px !important;
+        background-color: transparent !important;
+        
+        /* تنسيق النص على سطر واحد بالعرض */
+        color: #002244 !important;
+        font-size: 15px !important;
+        font-weight: 600 !important;
+        text-align: center !important;
+        white-space: normal !important; /* يسمح بالتفاف النص الطبيعي إذا كان طويلاً جداً، أو استعمل nowrap إذا بدك إياه سطر واحد قاطع */
+        word-wrap: break-word !important;
+        
+        transition: all 0.3s ease !important;
+    }
+
+    /* تأثير الـ Hover: يظهر البوردر ويتغير لون الخلفية والنص */
+    .content-section .project-btns li:hover {
+        border-color: #003366 !important;
+        background-color: #ffffff !important;
+        color: #003366 !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 12px rgba(0, 51, 102, 0.1) !important;
+        border-radius: 50px  !important;
+    }
+
+
+    .content-section .feedback-btns {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        padding: 0 15px !important;
+        margin: 0 !important;
+        list-style: none !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* تنسيق أزرار الـ Feedback لتأخذ عرضاً مناسباً ومريحاً وتمنع نزول الأحرف فوق بعضها */
+    .content-section .feedback-btns li {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        min-height: 52px !important;
+        padding: 14px 18px !important;
+        box-sizing: border-box !important;
+        
+        /* الحدود مخفية بالوضع العادي وتظهر عند الـ Hover */
+        border: 2px solid transparent !important;
+        border-radius: 10px !important;
+        background-color: transparent !important;
+        
+        /* السماح للنص بالالتفاف بشكل سليم وبدون تكسير الأحرف عمودياً */
+        color: #002244 !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        text-align: center !important;
+        white-space: normal !important;
+        word-wrap: break-word !important;
+        
+        transition: all 0.3s ease !important;
+    }
+
+    /* تأثير الـ Hover: يظهر البوردر ويتغير لون الخلفية والنص */
+    .content-section .feedback-btns li:hover {
+        border-color: #003366 !important;
+        background-color: #ffffff !important;
+        color: #003366 !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 12px rgba(0, 51, 102, 0.1) !important;
+    }
