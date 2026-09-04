@@ -603,10 +603,35 @@ footer p{
 
 @media (max-width: 768px) {
 
-    .site-logo {
-    max-height: 110px; /* شعار ضخم وبارز حتى على الموبايل */
+   /* ==========================================
+   Moustapha Daher Center - Final UI Polish
+   Designed by Menuba Creative
+   ========================================== */
+
+/* 1. دمج الشعار مع الخلفية وإلغاء أي إطار أو حدود عنه */
+.site-logo {
+  max-height: 130px;
+  width: auto;
+  object-fit: contain;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  transition: var(--transition);
+  filter: drop-shadow(0 8px 18px rgba(0,0,0,0.15));
+}
+
+.site-logo:hover {
+  transform: scale(1.08) rotate(-1deg);
+}
+
+/* 2. تعديلات الموبايل: إرجاع القائمة بالمنتصف تماماً والشعار الواضح */
+@media (max-width: 768px) {
+  .site-logo {
+    max-height: 105px;
   }
- .brand-header-container {
+
+  .brand-header-container {
     flex-direction: column;
     gap: 15px;
     text-align: center;
@@ -615,7 +640,9 @@ footer p{
   
   .brand-title-center h1 {
     font-size: 1.6rem;
-  }Mobile Body & Main Padding adjustments */
+  }
+
+  /* Mobile Body & Main Padding adjustments */
   body {
     overflow-x: hidden;
   }
@@ -638,7 +665,7 @@ footer p{
     margin-top: 25px;
   }
 
-  /* Navigation Menu Fix for Mobile */
+  /* Navigation Menu Fix for Mobile - تظبيط القائمة لتنزل بالمنتصف تماماً */
   .menu-toggle {
     display: flex;
     margin: 0 auto;
@@ -647,8 +674,11 @@ footer p{
   .menu-container {
     display: none;
     width: 100%;
-    background-color: var(--dark);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    background-color: rgba(7, 19, 41, 0.98);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+    text-align: center; /* تمركز العناصر */
   }
 
   .menu-container.active {
@@ -658,6 +688,8 @@ footer p{
   .main-nav {
     flex-direction: column;
     width: 100%;
+    align-items: center; /* تمركز الأزرار بالنص تماماً */
+    padding: 10px 0;
   }
 
   .main-nav li {
@@ -666,9 +698,20 @@ footer p{
   }
 
   .main-nav li a {
-    padding: 14px 20px;
-    font-size: 1rem;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    display: block;
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-align: center; /* توسيط النص داخل الزر */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    transition: var(--transition);
+  }
+
+  .main-nav li a:hover,
+  .main-nav li a.active {
+    background-color: rgba(0, 210, 255, 0.15);
+    color: var(--accent);
   }
 
   /* Gallery Circles Fix for Mobile */
@@ -725,7 +768,7 @@ footer p{
     font-size: 0.95rem;
     font-weight: 700;
     color: var(--dark);
-    text-align: left; /* تفعيل المحاذاة المرتبة للنصوص */
+    text-align: left;
   }
 
   .contact-form input,
