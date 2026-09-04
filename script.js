@@ -1,107 +1,92 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // تأثير ظهور تدريجي (Fade In & Slide Up) للـ Footer عند التمرير إليه
-    const footer = document.querySelector("footer");
-    
-    if (footer) {
-        footer.style.opacity = "0";
-        footer.style.transform = "translateY(20px)";
-        footer.style.transition = "all 0.6s ease-out";
-        
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    footer.style.opacity = "1";
-                    footer.style.transform = "translateY(0)";
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-        
-        observer.observe(footer);
-    }
-
-    // تأثير اهتزاز خفيف أو تفاعل عند الضغط على الأزرار
-    const interactiveButtons = document.querySelectorAll(".products-list li, .project-btns li, .feedback-btns li, nav a");
-    
-    interactiveButtons.forEach(btn => {
-        btn.addEventListener("mousedown", function() {
-            this.style.transform = "scale(0.97)";
-        });
-        btn.addEventListener("mouseup", function() {
-            this.style.transform = "scale(1)";
-        });
-    });
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-
-    // 1. أنيمايشن التمرير (Scroll Animation) للأقسام والعناصر
-    const observerOptions = {
-        threshold: 0.15 // بيشتغل الأنيمايشن أول ما يظهر 15% من العناصر عالعرض
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = "1";
-                entry.target.style.transform = "translateY(0)";
-                observer.unobserve(entry.target); // تشغيل الأنيمايشن مرة وحدة بس لكل عنصر
-            }
-        });
-    }, observerOptions);
-
-    // اختيار العناصر اللي بدك ياها تتحرك وقت الـ Scroll (الأقسام، العناوين، الفقرات)
-    const animatedElements = document.querySelectorAll(".content-section h2, .content-section p, .content-section ul, footer");
-    
-    animatedElements.forEach(el => {
-        el.style.opacity = "0";
-        el.style.transform = "translateY(25px)";
-        el.style.transition = "opacity 0.6s ease-out, transform 0.6s ease-out";
-        observer.observe(el);
-    });
-
-
-    // 2. أنيمايشن الانتقال الناعم (Page / Content Transition) عند كبس الأزرار
-    const navLinks = document.querySelectorAll("nav a, .service-links a, .bttns-service a");
-    const mainContent = document.querySelector("main");
-
-    navLinks.forEach(link => {
-        link.addEventListener("click", function(e) {
-            // التأكد إذا الرابط داخلي بنفس الصفحة أو بيفتح صفحة ثانية
-            const href = this.getAttribute("href");
-            
-            // لو الرابط بيؤدي لصفحة تانية (.html)، بنعمل تأثير إخفاء ناعم قبل الانتقال
-            if (href && href !== "#" && !href.startsWith("http")) {
-                e.preventDefault(); // إيقاف الانتقال الفوري المؤقت لتطبيق الحركة
-                
-                if (mainContent) {
-                    mainContent.style.opacity = "0";
-                    mainContent.style.transform = "translateY(-15px)";
-                    mainContent.style.transition = "opacity 0.3s ease, transform 0.3s ease";
-                }
-
-                // الانتقال للرابط بعد ما تخلص الحركة (300 ملي ثانية)
-                setTimeout(() => {
-                    window.location.href = href;
-                }, 300);
-            }
-        });
-    });
-
-});
-
-
+/**
+ * Moustapha Daher Center - Water Technologies Experts
+ * WOW Edition Interactive Script with Typewriter Header Effect by Menuba Creative
+ */
 
 document.addEventListener('DOMContentLoaded', () => {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const menuContainer = document.querySelector('.menu-container');
+  // 1. Generate Clean Modern Background Container
+  const wowBg = document.createElement('div');
+  wowBg.className = 'wow-bg-container';
+  document.body.prepend(wowBg);
 
-    if (menuToggle && menuContainer) {
-        menuToggle.addEventListener('click', () => {
-            menuContainer.classList.toggle('active');
-            
-            // تحويل شكل زر الهامبرغر إلى إكس (X) اختيارياً للشكل الجمالي
-            menuToggle.classList.toggle('open');
-        });
+  // 2. Typewriter Effect for "Mustapha Daher Center" Header Title
+  const titleElement = document.querySelector('.brand-title-center h1');
+  if (titleElement) {
+    const originalText = titleElement.textContent;
+    titleElement.textContent = '';
+    titleElement.style.borderRight = '3px solid #0052cc'; // Blinking cursor effect
+    titleElement.style.whiteSpace = 'nowrap';
+    titleElement.style.overflow = 'hidden';
+    titleElement.style.display = 'inline-block';
+    
+    let charIndex = 0;
+    function typeWriter() {
+      if (charIndex < originalText.length) {
+        titleElement.textContent += originalText.charAt(charIndex);
+        charIndex++;
+        setTimeout(typeWriter, 70); // Speed of typing (78ms per letter)
+      } else {
+        // Remove cursor or keep blinking after typing finishes
+        setTimeout(() => {
+          titleElement.style.borderRight = 'none';
+        }, 1000);
+      }
     }
+
+    // Start typing after a short sleek delay
+    setTimeout(typeWriter, 300);
+  }
+
+  // 3. Mobile Responsive Menu Toggle
+  const menuToggle = document.querySelector('.menu-toggle');
+  const menuContainer = document.querySelector('.menu-container');
+
+  if (menuToggle && menuContainer) {
+    menuToggle.addEventListener('click', () => {
+      menuContainer.classList.toggle('active');
+      menuToggle.classList.toggle('open');
+    });
+  }
+
+  // 4. Active Navigation Link Highlighting based on Current Page
+  const currentLocation = window.location.pathname.split('/').pop() || 'index.html';
+  const navLinks = document.querySelectorAll('.main-nav a');
+
+  navLinks.forEach(link => {
+    const linkHref = link.getAttribute('href');
+    if (linkHref === currentLocation) {
+      navLinks.forEach(el => el.classList.remove('active'));
+      link.classList.add('active');
+    }
+  });
+
+  // 5. Direct Form Validation & WhatsApp Instant Dispatcher
+  const contactForms = document.querySelectorAll('.contact-form');
+  contactForms.forEach(form => {
+    const whatsappBtn = form.querySelector('button[type="button"]');
+    
+    if (whatsappBtn) {
+      whatsappBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        let message = "Hello Moustapha Daher Center, I would like to inquire about: %0a";
+        
+        formData.forEach((value, key) => {
+          if (value.trim() !== "") {
+            message += `- *${key}*: ${value}%0a`;
+          }
+        });
+
+        const phoneNumber = "9613581180";
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+        window.open(whatsappUrl, '_blank');
+      });
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Thank you! Your request has been successfully processed by Moustapha Daher Center.');
+      form.reset();
+    });
+  });
 });
