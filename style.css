@@ -1,14 +1,13 @@
 /* Base Styles & Typography */
 body {
     font-family: 'Libre Franklin', sans-serif;
-    font-weight: 500; /* للـ Medium */
+    font-weight: 500;
     font-size: 17px;
     line-height: 1.5;
     color: #333333;
     margin: 0;
     padding: 0;
-    /* Pure water ripple background for the outer page */
-    background:url('./water-background.jpg') no-repeat center center fixed;
+    background: url('./water-background.jpg') no-repeat center center fixed;
     background-size: cover;
 }
 body p {
@@ -22,100 +21,46 @@ header {
     border-bottom: 3px solid #0056b3;
     box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     position: sticky;
-    top: 50;
+    top: 0;
     z-index: 1000;
     width: 100%;
-    
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
 }
 
-
-
-
-/* Big Logo Area */
+/* Big Logo Area (Bil-nos) */
 .logo-area {
     text-align: center;
-    padding: 25px 20px 15px 20px;
+    padding: 20px 20px 10px 20px;
     background-color: transparent;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .logo-area img.site-logo {
-    height: 200px;
+    height: 150px;
     width: auto;
     max-width: 100%;
-    display: inline-block;
-}
-
-
-
-
-
-/* حاوية شريط الفيلم القديم */
-.film-strip-container {
-    background-color: #111111;
-    padding: 10px 0;
-    overflow: hidden;
-    position: relative;
-    border-top: 2px solid #333;
-    border-bottom: 2px solid #333;
-    box-shadow: inset 0 0 15px rgba(0,0,0,0.8);
-}
-
-/* مسار الحركة المستمرة */
-.film-strip-track {
-    display: flex;
-    gap: 15px;
-    width: max-content;
-    animation: scrollFilm 25s linear infinite;
-}
-
-/* إطار الفيلم الفردي (شكل مستطيل سينمائي مع ثقوب الفيلم) */
-.film-frame {
-    width: 110px;
-    height: 75px;
-    background-color: #000;
-    border: 2px solid #444;
-    border-radius: 4px;
-    overflow: hidden;
-    position: relative;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
-    /* تأثير لون سينمائي خفيف (تغميق مع لمسة ريترو) */
-    filter: sepia(20%) contrast(110%);
-    flex-shrink: 0;
-}
-
-.film-frame img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
     display: block;
 }
 
-/* حركة السحب المستمرة لشريط الفيلم */
-@keyframes scrollFilm {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(calc(-50% - 7.5px));
-    }
-}
-
-/* إيقاف الحركة عند تمرير الماوس للمسار (اختياري لراحة العين) */
-.film-strip-container:hover .film-strip-track {
-    animation-play-state: paused;
-}
-
-/* Circular Image Showcase Gallery */
+/* Circular Image Showcase Gallery (Ta7et el-Logo) */
 .header-circles-container {
     background-color: #ffffff;
-    padding: 18px 20px;
+    padding: 15px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 15px;
     border-bottom: 1px solid #e2e8f0;
+    width: 100%;
     overflow-x: auto;
+    box-sizing: border-box;
 }
 
 .circle-item {
@@ -141,14 +86,15 @@ header {
     display: block;
 }
 
-
-/* Navigation Bar with Bordered Buttons */
+/* Navigation Bar / Menu (Ta7et el-Circles) */
 nav {
     background-color: #ffffff;
     padding: 15px 20px;
     display: flex;
     justify-content: center;
     border-bottom: 2px solid #ccd9ed;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 nav ul {
@@ -170,7 +116,7 @@ nav a {
     padding: 10px 18px;
     border: 2px solid #0044aa;
     border-radius: 100px;
-    background-color:#003d82;
+    background-color: #003d82;
     transition: all 0.3s ease;
     white-space: nowrap;
     box-shadow: 0 2px 4px rgba(0,0,0,0.04);
@@ -179,6 +125,28 @@ nav a {
 nav a:hover, nav a.active {
     background-color: #ffffff;
     color: #003d82;
+}
+
+/* زر الـ Hamburger */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #003d82;
+    border-radius: 5px;
+    transition: all 0.3s ease;
 }
 
 /* Main Content Area Container */
@@ -196,223 +164,164 @@ main {
     box-shadow: 0 8px 24px rgba(0, 51, 102, 0.12);
 }
 
-/* تنسيق قسم العناوين */
+/* تظبيط العناوين لتكون مأمنة ومرتبة */
 .section-title {
     color: #003366;
     font-size: 22px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin-top: 35px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     padding-bottom: 8px;
-    border: none;
+    padding-left: 10px;
 }
 
 .content-section > h2:first-of-type {
     margin-top: 0;
 }
-   /* services */
-/* تنسيق القائمة */
-.service-links {
+
+/* Services Sub-buttons Bar (ترتيب أزرار الخدمات الفرعية بأعلى الصفحة بشكل أنيق وخالٍ من الخطوط التحتية) */
+.service-bttns {
+    width: 100%;
+    padding: 10px 0 20px 0;
+    background-color: transparent;
+    margin-bottom: 20px;
+}
+
+.bttns-service {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-    flex-direction: column;
-    gap: 12px; /* مسافة بين الأزرار */
-}
-
-/* تحويل الروابط لشكل أزرار بـ Borders مرتبة */
-.service-links a {
-    display: block;
-    background-color: #ffffff; /* لون خلفية الزر */
-    color: #003366; /* لون النص */
-    text-decoration: none; /* إزالة الخط الافتراضي للرابط */
-    font-size: 15px;
-    padding: 12px 18px; /* مساحة داخلية لبيان الزر بحجم حلو */
-    border: 2px solid #e0e8f0; /* إطار (Border) هادئ ومرتب */
-    border-radius: 8px; /* تدوير الزوايا لتبدو مثل الأزرار الحديثة */
-    transition: all 0.3s ease; /* نعومة بالتأثيرات */
-    width: 30%;
-}
-
-/* تأثير عصري عند تمرير الماوس (Hover) */
-.service-links a:hover {
-    background-color: #003366; /* تغيير خفيف بلون الخلفية */
-    border-color: #003366; /* غامق لون الإطار عند التمرير */
-    color: white;
-    transform: translateX(5px); 
-    width: 30%;/* حركة خفيفة لليمين لتعطي طابع تفاعلي */
-}
-/* Paragraphs & Lists */
-
-
-
-/* تنسيق القسم الحاضن للأزرار لتكون بأعلى الصفحة */
-.service-bttns {
-    width: 100%;
-    padding: 15px 0;
-    background-color: #f8fafc; /* خلفية خفيفة مميزة للأعلى (اختيارية) */
-    border-bottom: 1px solid #e0e8f0;
-    margin-bottom: 30px;
-}
-
-/* ترتيب القائمة لتكون الأزرار جنب بعضها وبالمنتصف في أعلى الصفحة */
-.bttns-service {
-    list-style: none;
-    padding: 0;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center; /* تمركز الأزرار بالمنتصف (فيك تغيرها لـ flex-start لو بدك ياه عاليَسار) */
+    justify-content: center;
     align-items: center;
-    flex-wrap: wrap; /* لتنزيل الزوائد بسطر جديد تلقائياً لو الشاشة صغيرة */
-    gap: 12px; /* مسافة مرتبة بين الزر والثاني */
-    max-width: 1200px;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
 .bttns-service li {
     margin: 0;
 }
 
-/* تنسيق الروابط لتصبح أزرار أنيقة ومصفوفة بجانب بعضها */
 .bttns-service a {
     display: inline-block;
     background-color: #002244;
     color: white;
-    text-decoration: none;
+    text-decoration: none !important; /* إزالة أي خط تحتي نهائياً */
+    border-bottom: none !important;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 500;
     padding: 10px 20px;
-    border: 2px solid #e0e8f0;
-    border-radius: 30px; /* شكل الأزرار الدائرية الحديثة */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid #0044aa;
+    border-radius: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
-/* تأثير التفاعل عند تمرير الماوس */
-.bttns-service a:hover {
-    background-color: #003366;
-    color: #ffffff;
+.bttns-service a:hover, .bttns-service a.active {
+    background-color: #ffffff;
+    color: #003366;
     border-color: #003366;
     transform: translateY(-2px);
-    box-shadow: 0 5px 12px rgba(0, 51, 102, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 51, 102, 0.12);
 }
 
-/* تأثير خفيف عند الكبس */
-.bttns-service a:active {
-    transform: translateY(0);
+/* Services (Main page lists) */
+.service-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
+.service-links a {
+    display: block;
+    background-color: #ffffff;
+    color: #003366;
+    text-decoration: none !important;
+    border-bottom: none !important;
+    font-size: 15px;
+    padding: 12px 18px;
+    border: 2px solid #e0e8f0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    width: 30%;
+    box-sizing: border-box;
+}
 
+.service-links a:hover {
+    background-color: #003366;
+    border-color: #003366;
+    color: white;
+    transform: translateX(5px);
+    width: 30%;
+}
 
-
-/* تنسيق قائمة المنتجات لتكون كصناديق عمودية تحت بعضها */
+/* Products List (ترتيب مرتب ومتناسق بدون تباعد مبالغ فيه) */
 .products-list {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 1px; /* المسافة المريحة بين كل صندوق والثاني */
+    gap: 10px;
 }
 
-/* تصميم كل عنصر منتج كصندوق (Card) منفصل ونظيف */
 .products-list li {
-    background-color: transparent;
-
-    border-radius: 10px; /* تدوير زوايا الصندوق تماماً مثل الصورة */
-    padding: 18px 20px; /* المساحة الداخلية ليكون الصندوق عريض ومريح */
-    color: #002244; /* لون النص الداخلي */
+    background-color: #ffffff;
+    border: 2px solid #e0e8f0;
+    border-radius: 10px;
+    padding: 14px 20px;
+    color: #002244;
     font-size: 15px;
     font-weight: 500;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
     transition: all 0.3s ease;
     width: 30%;
+    box-sizing: border-box;
 }
 
-/* تأثير خفيف عند مرور الماوس على أي صندوق */
 .products-list li:hover {
     border-color: #003366;
+    background-color: #002244;
     box-shadow: 0 4px 12px rgba(0, 51, 102, 0.08);
     transform: translateY(-2px);
-    background-color: #002244;
     color: white;
-    font-size: 16px;
-    font-weight: 300;
 }
 
-
-
-
-
-
-/* تنسيق قائمة المشاريع لتكون كصناديق عمودية تحت بعضها */
-.project-btns {
+/* Project & Feedback Btns (ترتيب مرتب ومتناسق بدون تباعد مبالغ فيه) */
+.project-btns, .feedback-btns {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 15px; /* المسافة بين الصناديق */
+    gap: 10px;
 }
 
-/* تصميم كل عنصر مشروع كصندوق (Card) منفصل ونظيف */
-.project-btns li {
-    background-color: transparent; /* زوايا دائرية مرتبة */
-    padding: 15px 20px; /* مساحة داخلية مريحة */
-    color: #003366; /* لون النص */
+.project-btns li, .feedback-btns li {
+    background-color: #ffffff;
+    border: 2px solid #e0e8f0;
+    border-radius: 10px;
+    padding: 14px 20px;
+    color: #003366;
     font-size: 15px;
     font-weight: 500;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
     transition: all 0.3s ease-in-out;
-    width: 20%;
+    width: 30%;
+    box-sizing: border-box;
 }
 
-/* تأثير عند مرور الماوس */
-.project-btns li:hover {
+.project-btns li:hover, .feedback-btns li:hover {
     border-color: #003366;
-    box-shadow: 0 4px 12px rgba(0, 51, 102, 0.08);
-    transform: translateY(-2px);
-    background-color: #002244;
+    background-color: #003366;
     color: white;
-    width: 20%;
-    border-radius: 50px;
-    font-size: 16px;
-}
-
-.feedback-btns {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 15px; /* المسافة بين الصناديق */
-}
-
-/* تصميم كل عنصر مشروع كصندوق (Card) منفصل ونظيف */
-.feedback-btns li {
-    background-color: transparent; /* زوايا دائرية مرتبة */
-    padding: 15px 20px; /* مساحة داخلية مريحة */
-    color: #003366; /* لون النص */
-    font-size: 15px;
-    font-weight: 500;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
-    transition: all 0.3s ease-in-out;
-    width: 20%;
-}
-
-/* تأثير عند مرور الماوس */
-.feedback-btns li:hover {
-    border-color: #003366;
-    box-shadow: 0 4px 12px rgba(0, 51, 102, 0.08);
     transform: translateY(-2px);
-    background-color: #002244;
-    color: white;
-    width: 20%;
-    border-radius: 50px;
-    font-size: 16px;
-    font-weight: 400;
+    box-shadow: 0 4px 12px rgba(0, 51, 102, 0.08);
 }
-
 
 p {
     margin-bottom: 15px;
@@ -430,7 +339,7 @@ li {
     color: #444444;
 }
 
-/* Form Styles & Modern Layout */
+/* Form Styles */
 form {
     display: flex;
     flex-direction: column;
@@ -474,7 +383,6 @@ textarea {
     font-family: inherit;
     background-color: #f8fafc;
     box-sizing: border-box;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 input:focus, select:focus, textarea:focus {
@@ -489,7 +397,6 @@ textarea {
     min-height: 90px;
 }
 
-/* Form Action Buttons Container */
 .form-actions {
     display: flex;
     gap: 15px;
@@ -498,7 +405,6 @@ textarea {
     border-top: 1px solid #e2e8f0;
 }
 
-/* Modern Button Styles */
 button, input[type="submit"], input[type="reset"], .btn {
     padding: 12px 24px;
     font-size: 15px;
@@ -507,15 +413,13 @@ button, input[type="submit"], input[type="reset"], .btn {
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
-/* Send / Submit Button */
 button[type="submit"], input[type="submit"], .btn-primary {
     background-color: #0056b3;
     color: #ffffff;
@@ -523,28 +427,18 @@ button[type="submit"], input[type="submit"], .btn-primary {
 
 button[type="submit"]:hover, input[type="submit"]:hover, .btn-primary:hover {
     background-color: #003d82;
-    box-shadow: 0 4px 8px rgba(0, 86, 179, 0.25);
 }
 
-/* WhatsApp Button */
+/* WhatsApp Button (لون أخضر واضح وصريح بدل الأبيض) */
 .btn-whatsapp {
-    background-color: #25d366;
-    color: #ffffff;
+    background-color: #25d366 !important;
+    color: #ffffff !important;
 }
 
 .btn-whatsapp:hover {
-    background-color: #1ebe57;
+    background-color: #1ebe57 !important;
+    color: #ffffff !important;
     box-shadow: 0 4px 8px rgba(37, 211, 102, 0.25);
-}
-
-/* Reset Button */
-button[type="reset"], input[type="reset"], .btn-secondary {
-    background-color: #e2e8f0;
-    color: #334155;
-}
-
-button[type="reset"]:hover, input[type="reset"]:hover, .btn-secondary:hover {
-    background-color: #cbd5e1;
 }
 
 /* Footer */
@@ -552,387 +446,152 @@ footer {
     background-color: #002244;
     color: #ffffff;
     text-align: center;
-    padding: 0px;
+    padding: 10px;
     font-size: 15px;
     margin-top: 20px;
     border: 4px solid #0056b3;
-    word-spacing: 3px;
 }
 footer p {
     color: white;
 }
 
-/* Responsive adjustments */
-/* --- تحسينات عامة للموبايل --- */
-    
+/* Responsive adjustments (Mobile) */
 @media screen and (max-width: 768px) {
+    header {
+        align-items: center;
+    }
 
-
-    .logo-area{
+    .logo-area {
         width: 100% !important;
-        background-color: transparent !important;
-        height: 100% !important;
-        padding-top: 20px !important;
-
-
-    }
-    /* تدمير أي تداخل عرضي وإجبار الأقسام لتكون تحت بعضها قطعيّاً */
-    .content-section, 
-    .content-section * {
-        float: none !important;
+        text-align: center !important;
+        padding: 15px 0 5px 0 !important;
     }
 
-    .content-section {
-        display: block !important;
+    .logo-area img.site-logo {
+        height: 100px !important;
+        margin: 0 auto !important;
+    }
+
+    .header-circles-container {
         width: 100% !important;
-        box-sizing: border-box !important;
+        justify-content: center !important;
+        padding: 10px 10px !important;
     }
 
-    .content-section h2, 
-    .content-section .section-title {
-        display: block !important;
-        width: 100% !important;
-        clear: both !important;
-        margin-bottom: 12px !important;
+    /* زر المنيو تحت الدوائر وموضع على اليسار تماماً مع مسافة مريحة */
+    nav {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 12px 20px;
+        width: 100%;
+        box-sizing: border-box;
     }
 
-    .content-section p {
-        display: block !important;
-        width: 100% !important;
-        clear: both !important;
-        margin-top: 5px !important;
+    .menu-toggle {
+        display: flex !important; 
+        margin: 0;
+        cursor: pointer;
     }
-    /* ضبط العرض العام وحل مشكلة خروج المحتوى عن الإطار */
+
+    /* الحاوية الخاصة بالقائمة لتفتح وتسكر تحت الزر وتأخذ شكل أزرار مرتبة بـ Borders واضحة */
+    .menu-container {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        
+        max-height: 0 !important;
+        overflow: hidden !important;
+        transition: max-height 0.4s ease-in-out;
+        
+        display: flex;
+        flex-direction: column;
+        z-index: 9999;
+        box-sizing: border-box;
+    }
+
+    .menu-container.active {
+        max-height: 450px !important; 
+    }
+
+    .menu-toggle.open span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    .menu-toggle.open span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.open span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    .main-nav ul {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        gap: 10px;
+        list-style: none;
+        margin: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .main-nav li {
+        width: 100%;
+        margin: 0;
+    }
+
+    .main-nav a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        background-color: #f8fafc;
+        color: #003d82 !important;
+        border: 2px solid #0044aa !important;
+        border-radius: 50px;
+        padding: 10px 15px;
+        font-size: 14px;
+        font-weight: 600;
+        white-space: nowrap;
+        box-sizing: border-box;
+        text-decoration: none !important;
+        border-bottom: none !important;
+    }
+
+    .main-nav a:hover, .main-nav a.active {
+        background-color: #003d82 !important;
+        color: #ffffff !important;
+    }
+
     body {
         overflow-x: hidden !important;
     }
 
-    main, 
-    .content-section {
+    main, .content-section {
         width: 100% !important;
         max-width: 100% !important;
-        display: block !important;
         box-sizing: border-box !important;
-        padding: 15px !important;
+        padding: 20px 15px !important;
         margin: 0 auto !important;
-        overflow: hidden !important;
     }
 
-    /* حصر جميع النصوص والعناوين داخل الحدود تماماً */
-    .content-section *,
-    .content-section h2, 
-    .content-section .section-title,
-    .content-section p,
-    .content-section ul,
-    .content-section ol,
-    .content-section li {
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-        word-wrap: break-word !important;
-        overflow-wrap: break-word !important;
-    }
-
-    .content-section h2, 
-    .content-section .section-title,
-    .content-section p,
-    .content-section ul,
-    .content-section ol {
-        display: block !important;
-        width: 100% !important;
-        float: none !important;
-        clear: both !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-    }
-
-    .content-section h2, 
     .content-section .section-title {
-        font-size: 20px !important;
-        margin-top: 20px !important;
-        margin-bottom: 12px !important;
+        font-size: 19px !important;
+        padding-left: 5px !important;
     }
 
-    .content-section p,
-    .content-section li {
-        font-size: 14px !important;
-        line-height: 1.6 !important;
-        margin-bottom: 10px !important;
-    }
-
-    .content-section ol, 
-    .content-section ul {
-        padding-left: 20px !important;
-        padding-right: 0 !important;
-    }
-
-    /* 
-      إجبار الحاويات كلها (سواء كانت ul أو div أو كلاسات الخدمات) 
-      لتصير أفقية 100% مع تفعيل السكرول الأفقي بشكل قطعي 
-    */
+    /* تعديل عرض أزرار المنتجات والمشاريع والملاحظات وأزرار الخدمات الفرعية في الموبايل لتأخذ عرضاً مرتباً ومتناسقاً */
+    .products-list li,
+    .project-btns li,
+    .feedback-btns li,
     .service-links a,
-    .bttns-service a,
-    .products-list li,
-    .project-btns {
-        display: flex!important;
-         flex-direction: column !important;
-        width:100% !important;
-    }
-
-
-
-    /* إجبار الأزرار أو العناصر داخل القائمة لتصطف بجانب بعضها ودون أن تنزل لتحت */
-    .service-links 
-    .bttns-service a,
-    .products-list li,
-    .bttns-service  {
-        display: inline-flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        flex: 0 0 auto !important;
-        width: auto !important;
-        min-width: 160px !important;
-        max-width: 220px !important;
+    .bttns-service a {
+        width: 100% !important;
         box-sizing: border-box !important;
-        white-space: normal !important;
-        word-wrap: break-word !important;
-        padding: 12px 16px !important;
-        margin-bottom: 0 !important;
-        margin-right: 0 !important;
-        border: 2px solid white !important;
-        border-radius: 10px !important;
-        background-color: transparent !important;
-        color: #002244 !important;
-        text-decoration: none !important;
-        font-size: 13px !important;
-        font-weight: 800 !important;
-        line-height: 1.4 !important;
         text-align: center !important;
-        transition: all 0.3s ease !important;
-    }
-
-    .service-links li:hover,
-    .service-links a:hover,
-    .bttns-service a:hover {
-        background-color: #ffffff !important;
-        border-color: #003366 !important;
-        color: #003366 !important;
-        transform: translateY(-2px) !important;
-        box-shadow: 0 4px 12px rgba(0, 51, 102, 0.1) !important;
-        font-weight: 600;
-        font-size: 16px;
-    }
-
-    /* تعديل الدوائر العلوية */
-    .circles-container, 
-    .header-circles-wrapper {
-        display: flex !important;
-        justify-content: center !important;
-        align-items: center !important;
-        position: relative !important;
-        background: transparent !important;
-        overflow: hidden !important;
-        padding: 10px 0 !important;
-    }
-
-    .circles-container .circle,
-    .header-circles-wrapper .circle {
-        width: 70px !important;
-        height: 70px !important;
-        border-radius: 50% !important;
-        border: 2px solid #003366 !important;
-        background-color: transparent !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        margin-left: -12px !important;
-        position: relative !important;
-        transition: transform 0.3s ease !important;
-    }
-
-    .circles-container .circle:first-child,
-    .header-circles-wrapper .circle:first-child {
-        margin-left: 0 !important;
-    }
-
-    .header-logo, 
-    .center-logo {
-        position: absolute !important;
-        left: 50% !important;
-        top: 50% !important;
-        transform: translate(-50%, -50%) !important;
-        z-index: 10 !important;
-        background: transparent !important;
     }
 }
-
-
-/* ضبط الحاوية العامة للإطار الأبيض */
-   .content-section {
-        width: 100% !important;
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-        padding: 20px !important;
-        margin: 0 auto !important;
-        overflow: hidden !important;
-    }
-
-    /* تنسيق عنوان القسم */
-    .content-section .section-title {
-        font-size: 20px !important;
-        font-weight: 700 !important;
-        color: #002244 !important;
-        margin-top: 0 !important;
-        margin-bottom: 15px !important;
-        text-align: left !important;
-        padding-left: 30px !important;
-    }
-
-    /* الحاوية التي تحمل عناصر القائمة (المنتجات) */
-    .content-section .products-list {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 10px !important;
-        padding: 0 50px !important; /* مسافة من اليمين واليسار لكي لا تلصق بالبوردر الأبيض */
-        margin: 0 !important;
-        list-style: none !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-    }
-
-    /* تصميم العناصر والأزرار بحيث تكون تحت بعضها حصراً وبدون لصق بالإطار */
-    .content-section .products-list li {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        width: 100% !important;
-        min-height: 50px !important;
-        padding: 12px 130px !important;
-        box-sizing: border-box !important;
-        
-        /* الحدود مخفية بالوضع العادي وتظهر عند الـ Hover */
-        border: 2px solid transparent !important;
-        border-radius: 50px !important;
-        background-color: transparent !important;
-        
-        /* تنسيق الخط والنص: بالعرض على سطر واحد */
-        color: #002244 !important;
-        font-size: 14px !important;
-        font-weight: 600 !important;
-        text-align: center !important;
-        white-space: nowrap !important;
-        transition: all 0.3s ease !important;
-        width: 100% !important;
-    }
-
-    /* تأثير الـ Hover: يظهر البوردر ويتغير اللون مع الحركة */
-    .content-section .products-list li:hover {
-        border-color: #003366 !important;
-        background-color: #ffffff !important;
-        color: #003366 !important;
-        transform: translateY(-2px) !important;
-        box-shadow: 0 4px 12px rgba(0, 51, 102, 0.1) !important;
-    }
-
-
-
-
-    .content-section .project-btns {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 12px !important;
-        padding: 0 15px !important; /* مسافة آمنة من اليمين واليسار لكي لا تلصق بالبوردر الأبيض */
-        margin: 0 !important;
-        list-style: none !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-    }
-
-    /* تنسيق أزرار المشاريع لتأخذ عرضاً كاملاً ومريحاً دون تكسير الكلمات */
-    .content-section .project-btns li {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        width: 100% !important;
-        min-height: 52px !important;
-        padding: 14px 20px !important;
-        box-sizing: border-box !important;
-        
-        /* الحدود مخفية بالوضع العادي وتظهر عند الـ Hover */
-        border: 2px solid transparent !important;
-        border-radius: 10px !important;
-        background-color: transparent !important;
-        
-        /* تنسيق النص على سطر واحد بالعرض */
-        color: #002244 !important;
-        font-size: 15px !important;
-        font-weight: 600 !important;
-        text-align: center !important;
-        white-space: normal !important; /* يسمح بالتفاف النص الطبيعي إذا كان طويلاً جداً، أو استعمل nowrap إذا بدك إياه سطر واحد قاطع */
-        word-wrap: break-word !important;
-        
-        transition: all 0.3s ease !important;
-    }
-
-    /* تأثير الـ Hover: يظهر البوردر ويتغير لون الخلفية والنص */
-    .content-section .project-btns li:hover {
-        border-color: #003366 !important;
-        background-color: #ffffff !important;
-        color: #003366 !important;
-        transform: translateY(-2px) !important;
-        box-shadow: 0 4px 12px rgba(0, 51, 102, 0.1) !important;
-        border-radius: 50px  !important;
-    }
-
-
-    .content-section .feedback-btns {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 12px !important;
-        padding: 0 15px !important;
-        margin: 0 !important;
-        list-style: none !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-    }
-
-    /* تنسيق أزرار الـ Feedback لتأخذ عرضاً مناسباً ومريحاً وتمنع نزول الأحرف فوق بعضها */
-    .content-section .feedback-btns li {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        width: 100% !important;
-        min-height: 52px !important;
-        padding: 14px 18px !important;
-        box-sizing: border-box !important;
-        
-        /* الحدود مخفية بالوضع العادي وتظهر عند الـ Hover */
-        border: 2px solid transparent !important;
-        border-radius: 10px !important;
-        background-color: transparent !important;
-        
-        /* السماح للنص بالالتفاف بشكل سليم وبدون تكسير الأحرف عمودياً */
-        color: #002244 !important;
-        font-size: 14px !important;
-        font-weight: 600 !important;
-        text-align: center !important;
-        white-space: normal !important;
-        word-wrap: break-word !important;
-        
-        transition: all 0.3s ease !important;
-    }
-
-    /* تأثير الـ Hover: يظهر البوردر ويتغير لون الخلفية والنص */
-    .content-section .feedback-btns li:hover {
-        border-color: #003366 !important;
-        background-color: #ffffff !important;
-        color: #003366 !important;
-        transform: translateY(-2px) !important;
-        box-shadow: 0 4px 12px rgba(0, 51, 102, 0.1) !important;
-    }
-
-
-    .footer-class p{
-     width: 100% !important;
-     font-size: 13px !important;
-     word-spacing: 1px;   
-    }

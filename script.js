@@ -89,3 +89,19 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
 });
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menuContainer = document.querySelector('.menu-container');
+
+    if (menuToggle && menuContainer) {
+        menuToggle.addEventListener('click', () => {
+            menuContainer.classList.toggle('active');
+            
+            // تحويل شكل زر الهامبرغر إلى إكس (X) اختيارياً للشكل الجمالي
+            menuToggle.classList.toggle('open');
+        });
+    }
+});

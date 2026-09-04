@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@500;700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moustapha Daher Center - Water Technologies Experts</title>
     <link rel="stylesheet" href="./style.css">
@@ -12,40 +12,40 @@
 <body>
     
     <header>
+        <!-- 1. El-Logo Bil-Nos -->
         <div class="logo-area">
-            <!-- Logo image replacing the text title -->
             <a href="index.html">
                 <img src="logo.png" alt="Moustapha Daher Center - Water Technologies Experts" class="site-logo">
             </a>
         </div>
-        <!-- Circular Image Showcase Gallery -->
-       <!-- Retro Film Strip Container -->
-<div class="film-strip-container">
-    <div class="film-strip-track">
-        <!-- الصور مكررة مرتين لضمان استمرارية الحركة (Infinite Loop) -->
-        <div class="film-frame"><img src="image1.jpg" alt="Water Tech 1"></div>
-        <div class="film-frame"><img src="image2.jpg" alt="Water Tech 2"></div>
-        <div class="film-frame"><img src="image3.jpg" alt="Water Tech 3"></div>
-        <div class="film-frame"><img src="image4.jpg" alt="Water Tech 4"></div>
-        <div class="film-frame"><img src="image5.jpg" alt="Water Tech 5"></div>
-        <!-- تكرار لنفس الصور عشان الحركة تضضل ناعمة ومابتنقطع -->
-        <div class="film-frame"><img src="image1.jpg" alt="Water Tech 1"></div>
-        <div class="film-frame"><img src="image2.jpg" alt="Water Tech 2"></div>
-        <div class="film-frame"><img src="image3.jpg" alt="Water Tech 3"></div>
-        <div class="film-frame"><img src="image4.jpg" alt="Water Tech 4"></div>
-        <div class="film-frame"><img src="image5.jpg" alt="Water Tech 5"></div>
-    </div>
-</div>
+
+        <!-- 2. Circular Image Showcase Gallery (Ta7et el-Logo) -->
+        <div class="header-circles-container">
+            <div class="circle-item"><img src="image1.jpg" alt="Water Technology 1"></div>
+            <div class="circle-item"><img src="image2.jpg" alt="Water Technology 2"></div>
+            <div class="circle-item"><img src="image3.jpg" alt="Water Technology 3"></div>
+            <div class="circle-item"><img src="image4.jpg" alt="Water Technology 4"></div>
+            <div class="circle-item"><img src="image5.jpg" alt="Water Technology 5"></div>
+        </div>
+
+        <!-- 3. Nav w El-Menu Button (Ta7et el-Circles) -->
         <nav>
-            <ul>
-                <li><a href="index.html" class="active">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="feedback.html">Clients Feedback</a></li>
-                <li><a href="quotation.html">Quotation Request</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
+            <button class="menu-toggle" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="menu-container">
+                <ul class="main-nav">
+                    <li><a href="index.html" class="active">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="feedback.html">Clients Feedback</a></li>
+                    <li><a href="quotation.html">Quotation Request</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
@@ -79,10 +79,10 @@
         </section>
     </main>
     
-
     <footer class="footer-class">
         <p>Tel: +961 7 220 181 | Mobile: +961 3 581 180, +961 70 581 180 | info@dahercenter.com | www.dahercenter.com.lb</p>
     </footer>
+
     <script src="./script.js"></script>
 </body>
 </html>
